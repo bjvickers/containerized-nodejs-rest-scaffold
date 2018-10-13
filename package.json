@@ -1,0 +1,38 @@
+{
+  "name": "containerized-nodejs-rest-scaffold",
+  "version": "0.0.0",
+  "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build"
+    }
+  },
+  "scripts": {
+    "build1": "npm audit && npm run test-complexity",
+    "build": "npm audit && npm run transpile && npm test; #&& npm pack",
+    "transpile": "exit 0",
+    "test": "npm run test-complexity && npm run test-spec && npm run test-feature",
+    "test-complexity": "./node_modules/.bin/cr .",
+    "test-spec": "echo 'no tests yet' && exit 0",
+    "test-feature": "echo 'no tests yet' && exit 0",
+    "start-wip": "node ./bin/www",
+    "start-wip-debugger": "node --inspect-brk=0.0.0.0:9229 ./bin/www",
+    "start-wip-profiler": "node --prof ./bin/www",
+    "start": "./node_modules/.bin/pm2 start ./bin/www -i \"max\" -- --production"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "pm2": "^3.2.2",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "complexity-report": "^2.0.0-alpha",
+    "husky": "^1.1.2",
+    "loadtest": "^3.0.4",
+    "notes": "0.0.4"
+  }
+}

@@ -44,6 +44,11 @@ Includes a complexity test, although no complexity thresholds are set yet.
 Read more: https://www.npmjs.com/package/complexity-report
 
 
+### Leaving Notes
+Leave 'todo' and 'fixme' comments in a format that can be retrieved by
+`npm run inspect-notes`. Formatting guide is here: https://www.npmjs.com/package/notes
+
+
 
 ## Production
 ### Run

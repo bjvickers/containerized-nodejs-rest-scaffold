@@ -8,6 +8,7 @@
     }
   },
   "scripts": {
+    "inspect-notes": "./node_modules/.bin/notes",
     "build": "npm audit && npm run lint && npm run transpile && npm run copy-static-assets && npm test",
     "lint": "./node_modules/.bin/standard \"src/**/*.ts\"",
     "lint-fix": "./node_modules/.bin/standard --fix \"src/**/*.ts\"",
@@ -23,19 +24,19 @@
     "start": "./node_modules/.bin/pm2 start ./dist/bin/start.js -i \"max\" -- --production"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.3",
-    "express": "~4.16.0",
     "express-pino-logger": "^4.0.0",
     "http-errors": "~1.6.2",
     "pm2": "^3.2.2",
     "pug": "^2.0.3"
   },
   "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/http-errors": "^1.6.1",
     "@types/node": "^10.11.3",
     "@types/shelljs": "^0.8.0",
     "complexity-report": "^2.0.0-alpha",
-    "debug": "*",
     "eslint-plugin-typescript": "*",
+    "express": "^4.16.4",
     "husky": "^1.1.2",
     "loadtest": "^3.0.4",
     "notes": "0.0.4",

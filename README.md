@@ -10,7 +10,6 @@ $ npm run start-wip
 
 ### Debugging
 ```
-$ npm run start-wip   
 $ npm run start-wip-debugger   
 ```
 
@@ -33,9 +32,9 @@ $ vim profile-app.log
 ```
 
 Local load testing can be performed using the included `loadtest` package.
-This is useful for locating cpu-intensive code.
+This is useful for locating cpu-intensive code and for optimising throughput.
 ```
-$ ./node_modules/loadtest/bin/loadtest.js -k -c 10 -n 10 http://localhost:3000/
+$ ./node_modules/loadtest/bin/loadtest.js -c 1 -n 10 http://localhost:3000/
 ```
 
 ### Test

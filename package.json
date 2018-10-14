@@ -1,7 +1,12 @@
 {
   "name": "containerized-nodejs-rest-scaffold",
   "version": "0.0.0",
-  "private": true,
+  "description": "A scaffold for building a containerized NodeJS REST service",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bjvickers/containerized-nodejs-rest-scaffold"
+  },
+  "author": "bjvickers",
   "husky": {
     "hooks": {
       "pre-commit": "npm run build"
@@ -18,8 +23,9 @@
     "test-complexity": "./node_modules/.bin/cr ./dist/",
     "test-spec": "echo 'no tests yet' && exit 0",
     "test-feature": "echo 'no tests yet' && exit 0",
-    "start-wip": "node ./dist/bin/start.js",
-    "start-wip-debugger": "node --inspect-brk=0.0.0.0:9229 ./dist/bin/start.js",
+    "watch-ts": "./node_modules/.bin/tsc -w",
+    "start-wip": "./node_modules/.bin/concurrently --prefix \"[{name}]\" --kill-others --prefix-colors \"yellow.bold,cyan.bold\" \"npm:watch-ts\" \"nodemon ./dist/bin/start.js\"",
+    "start-wip-debugger": "./node_modules/.bin/concurrently --prefix \"[{name}]\" --kill-others --prefix-colors \"yellow.bold,cyan.bold\" \"npm:watch-ts\" \"nodemon --inspect-brk=0.0.0.0:9229 ./dist/bin/start.js",
     "start-wip-profiler": "node --prof ./dist/bin/start.js",
     "start": "./node_modules/.bin/pm2 start ./dist/bin/start.js -i \"max\" -- --production"
   },
@@ -27,7 +33,7 @@
     "express-pino-logger": "^4.0.0",
     "http-errors": "~1.7.1",
     "pm2": "^3.2.2",
-    "pug": "^2.0.3"
+    "pug": "*"
   },
   "devDependencies": {
     "@types/express": "^4.16.0",
@@ -35,10 +41,12 @@
     "@types/node": "^10.11.3",
     "@types/shelljs": "^0.8.0",
     "complexity-report": "^2.0.0-alpha",
+    "concurrently": "^4.0.1",
     "eslint-plugin-typescript": "*",
     "express": "^4.16.4",
     "husky": "^1.1.2",
     "loadtest": "^3.0.4",
+    "nodemon": "^1.18.4",
     "notes": "0.0.4",
     "shelljs": "^0.8.2",
     "standard": "*",

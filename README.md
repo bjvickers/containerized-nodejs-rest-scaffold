@@ -1,4 +1,6 @@
 # Containerized Nodejs REST Scaffold
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Travis](https://travis-ci.org/bjvickers/base.svg?branch=master)](https://travis-ci.org/bjvickers/base)
 
 ## Develop and Staging
 ### Run

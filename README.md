@@ -1,4 +1,6 @@
 # Containerized Nodejs REST Scaffold
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Travis](https://travis-ci.org/bjvickers/base.svg?branch=master)](https://travis-ci.org/bjvickers/base)
 
 ## Develop and Staging
 ### Run
@@ -42,6 +44,11 @@ $ npm test
 ```
 Includes a complexity test, although no complexity thresholds are set yet.
 Read more: https://www.npmjs.com/package/complexity-report
+
+
+### Leaving Notes
+Leave 'todo' and 'fixme' comments in a format that can be retrieved by
+`npm run inspect-notes`. Formatting guide is here: https://www.npmjs.com/package/notes
 
 
 

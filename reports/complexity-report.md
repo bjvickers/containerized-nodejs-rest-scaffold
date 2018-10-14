@@ -1,25 +1,25 @@
-# Complexity report, 10/13/2018
+# Complexity report, 10/14/2018
 
-* Mean per-function logical LOC: 1.8333333333333333
-* Mean per-function parameter count: 3.1666666666666665
-* Mean per-function cyclomatic complexity: 1.3333333333333333
-* Mean per-function Halstead effort: 250.83742995589913
-* Mean per-module maintainability index: 145.86556250856378
-* First-order density: 22.22222222222222%
-* Change cost: 55.55555555555556%
-* Core size: 66.66666666666666%
+* Mean per-function logical LOC: 2.875
+* Mean per-function parameter count: 2.541666666666667
+* Mean per-function cyclomatic complexity: 1.75
+* Mean per-function Halstead effort: 528.6724167965856
+* Mean per-module maintainability index: 138.6589778713664
+* First-order density: 18.75%
+* Change cost: 56.25%
+* Core size: 0%
 
-## /home/ben/project1/app.js
+## /home/ben/project1/dist/app.js
 
-* Physical LOC: 41
-* Logical LOC: 26
+* Physical LOC: 32
+* Logical LOC: 27
 * Mean parameter count: 3.5
 * Cyclomatic complexity: 3
-* Cyclomatic complexity density: 11.538461538461538%
+* Cyclomatic complexity density: 11.11111111111111%
 * Maintainability index: 134.0031581377868
-* Dependency count: 7
+* Dependency count: 6
 * Function: **&lt;anonymous>**
-    * Line No.: 26
+    * Line No.: 21
     * Physical LOC: 3
     * Logical LOC: 1
     * Parameter count: 3
@@ -29,8 +29,8 @@
     * Halstead volume: 20.67970000576925
     * Halstead effort: 12.407820003461548
 * Function: **&lt;anonymous>**
-    * Line No.: 31
-    * Physical LOC: 9
+    * Line No.: 25
+    * Physical LOC: 8
     * Logical LOC: 4
     * Parameter count: 4
     * Cyclomatic complexity: 3
@@ -39,17 +39,57 @@
     * Halstead volume: 208.0838499786226
     * Halstead effort: 1228.9952389362397
 
-## /home/ben/project1/routes/index.js
+## /home/ben/project1/dist/bin/start.js
+
+* Physical LOC: 60
+* Logical LOC: 29
+* Mean parameter count: 0.6666666666666666
+* Cyclomatic complexity: 8
+* Cyclomatic complexity density: 27.586206896551722%
+* Maintainability index: 117.03922395977435
+* Dependency count: 2
+* Function: **normalizePort**
+    * Line No.: 24
+    * Physical LOC: 12
+    * Logical LOC: 6
+    * Parameter count: 1
+    * Cyclomatic complexity: 3
+    * Cyclomatic complexity density: 50%
+    * Halstead difficulty: 5.142857142857142
+    * Halstead volume: 81.40967379910403
+    * Halstead effort: 418.6783223953921
+* Function: **onError**
+    * Line No.: 39
+    * Physical LOC: 19
+    * Logical LOC: 12
+    * Parameter count: 1
+    * Cyclomatic complexity: 5
+    * Cyclomatic complexity density: 41.66666666666667%
+    * Halstead difficulty: 12.76470588235294
+    * Halstead volume: 287.3433860024388
+    * Halstead effort: 3667.8538095605422
+* Function: **onListening**
+    * Line No.: 61
+    * Physical LOC: 3
+    * Logical LOC: 0
+    * Parameter count: 0
+    * Cyclomatic complexity: 1
+    * Cyclomatic complexity density: Infinity%
+    * Halstead difficulty: 0
+    * Halstead volume: 0
+    * Halstead effort: 0
+
+## /home/ben/project1/dist/routes/index.js
 
 * Physical LOC: 9
-* Logical LOC: 6
+* Logical LOC: 9
 * Mean parameter count: 3
 * Cyclomatic complexity: 1
-* Cyclomatic complexity density: 16.666666666666664%
+* Cyclomatic complexity density: 11.11111111111111%
 * Maintainability index: 143.85902932525187
 * Dependency count: 1
 * Function: **&lt;anonymous>**
-    * Line No.: 5
+    * Line No.: 7
     * Physical LOC: 3
     * Logical LOC: 2
     * Parameter count: 3
@@ -59,17 +99,17 @@
     * Halstead volume: 46.604512509375034
     * Halstead effort: 104.86015314609382
 
-## /home/ben/project1/routes/users.js
+## /home/ben/project1/dist/routes/users.js
 
 * Physical LOC: 9
-* Logical LOC: 5
+* Logical LOC: 8
 * Mean parameter count: 3
 * Cyclomatic complexity: 1
-* Cyclomatic complexity density: 20%
+* Cyclomatic complexity density: 12.5%
 * Maintainability index: 159.73450006265264
 * Dependency count: 1
 * Function: **&lt;anonymous>**
-    * Line No.: 5
+    * Line No.: 7
     * Physical LOC: 3
     * Logical LOC: 1
     * Parameter count: 3

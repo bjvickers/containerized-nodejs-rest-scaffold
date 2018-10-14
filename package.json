@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "express-pino-logger": "^4.0.0",
-    "http-errors": "~1.6.2",
+    "http-errors": "~1.7.1",
     "pm2": "^3.2.2",
     "pug": "^2.0.3"
   },

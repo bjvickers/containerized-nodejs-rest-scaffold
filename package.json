@@ -10,6 +10,7 @@
   "scripts": {
     "build": "npm audit && npm run lint && npm run transpile && npm test",
     "lint": "./node_modules/.bin/standard \"src/**/*.ts\"",
+    "lint-fix": "./node_modules/.bin/standard --fix \"src/**/*.ts\"",
     "transpile": "./node_modules/.bin/tsc",
     "test": "npm run test-complexity && npm run test-spec && npm run test-feature",
     "test-complexity": "./node_modules/.bin/cr ./dist/",
@@ -42,6 +43,8 @@
   },
   "standard": {
     "parser": "typescript-eslint-parser",
-    "plugins": [ "typescript" ]
+    "plugins": [
+      "typescript"
+    ]
   }
 }

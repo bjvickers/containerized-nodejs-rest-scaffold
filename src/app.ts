@@ -16,8 +16,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/', indexRouter)
-app.use('/users', usersRouter)
+app.use('/', indexRouter.router)
+app.use('/users', usersRouter.router)
 
 // catch 404 and forward to error handler
 app.use(function (req: any, res: any, next: any) {

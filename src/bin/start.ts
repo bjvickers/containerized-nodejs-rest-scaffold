@@ -1,37 +1,13 @@
-/**
- * Module dependencies.
- */
+'use strict'
 
-let app = require('../app')
-let http = require('http')
-
-/**
- * Get port from environment and store in Express.
- */
-
-let port = normalizePort(process.env.PORT || '3000')
-app.app.set('port', port)
-
-/**
- * Create HTTP server.
- */
-
-let server = http.createServer(app.app)
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port)
-server.on('error', onError)
-server.on('listening', onListening)
+import app from '../app'
+import http from 'http'
 
 /**
  * Normalize a port into a number, string, or false.
  */
-
-function normalizePort (val: any) {
-  var port = parseInt(val, 10)
+const normalizePort = (val: string): any => {
+  const port: number = parseInt(val, 10)
 
   if (isNaN(port)) {
     // named pipe
@@ -49,8 +25,7 @@ function normalizePort (val: any) {
 /**
  * Event listener for HTTP server "error" event.
  */
-
-function onError (error: any) {
+const onError = (error: any): any => {
   if (error.syscall !== 'listen') {
     throw error
   }
@@ -75,7 +50,13 @@ function onError (error: any) {
 /**
  * Event listener for HTTP server "listening" event.
  */
-
-function onListening () {
+const onListening = (): void => {
   // # TODO: implement listening code here
 }
+
+const port = normalizePort(process.env.PORT || '3000')
+app.set('port', port)
+const server = http.createServer(app)
+server.listen(port)
+server.on('error', onError)
+server.on('listening', onListening)

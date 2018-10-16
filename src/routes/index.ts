@@ -1,9 +1,12 @@
-let express = require('express')
-let router = express.Router()
+'use strict'
+
+import express from 'express'
+
+const router: express.Router = express.Router()
 
 /* GET home page. */
-router.get('/', function (req: any, res: any, next: any) {
+router.get('/', function (req: express.Request, res: express.Response, next: express.NextFunction) {
   res.render('index', { title: 'Express' })
 })
 
-export { router }
+export default router

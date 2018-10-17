@@ -9,37 +9,47 @@
   "author": "bjvickers",
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build"
+      "pre-commit": "npm run checks"
     }
   },
   "scripts": {
-    "inspect-notes": "./node_modules/.bin/notes",
-    "build": "npm audit && npm run lint && npm run transpile && npm run copy-static-assets && npm test",
-    "lint": "./node_modules/.bin/standard \"src/**/*.ts\"",
-    "lint-fix": "./node_modules/.bin/standard --fix \"src/**/*.ts\"",
-    "transpile": "./node_modules/.bin/tsc",
-    "copy-static-assets": "./node_modules/.bin/ts-node copy-static-assets.ts",
+    "inspect-notes": "notes src/",
+    "checks": "npm run lint && npm run transpile && npm run copy-static-assets && npm test",
+    "lint": "tslint --config tslint.json \"src/**/*.ts\"",
+    "lint-fix": "tslint --fix --config tslint.json \"src/**/*.ts\"",
+    "build": "npm run transpile && npm run copy-static-assets",
+    "transpile": "tsc",
+    "copy-static-assets": "ts-node copy-static-assets.ts",
     "test": "npm run test-complexity && npm run test-spec && npm run test-feature",
-    "test-complexity": "./node_modules/.bin/cr ./dist/",
+    "test-complexity": "cr ./dist/",
     "test-spec": "echo 'no tests yet' && exit 0",
     "test-feature": "echo 'no tests yet' && exit 0",
-    "watch-ts": "./node_modules/.bin/tsc -w",
-    "start-wip": "./node_modules/.bin/concurrently --prefix \"[{name}]\" --kill-others --prefix-colors \"yellow.bold,cyan.bold\" \"npm:watch-ts\" \"nodemon ./dist/bin/start.js\"",
-    "start-wip-debugger": "./node_modules/.bin/concurrently --prefix \"[{name}]\" --kill-others --prefix-colors \"yellow.bold,cyan.bold\" \"npm:watch-ts\" \"nodemon --inspect-brk=0.0.0.0:9229 ./dist/bin/start.js",
-    "start-wip-profiler": "node --prof ./dist/bin/start.js",
-    "start": "./node_modules/.bin/pm2 start ./dist/bin/start.js -i \"max\" -- --production"
+    "watch-ts": "tsc -w",
+    "start:dev": "concurrently --prefix \"[{name}]\" --kill-others --prefix-colors \"yellow.bold,cyan.bold\" \"npm:watch-ts\" \"nodemon ./dist/bin/start.js\"",
+    "start:dev:debugger": "concurrently --prefix \"[{name}]\" --kill-others --prefix-colors \"yellow.bold,cyan.bold\" \"npm:watch-ts\" \"nodemon --inspect-brk=0.0.0.0:9229 ./dist/bin/start.js\"",
+    "start:dev:profiler": "node --prof ./dist/bin/start.js",
+    "start": "pm2 start ./dist/bin/start.js -i \"max\" -- --production"
   },
   "dependencies": {
-    "express-pino-logger": "^4.0.0",
+    "bluebird": "^3.5.2",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.1.0",
     "http-errors": "^1.7.1",
+    "pino": "^5.8.0",
     "pm2": "^3.2.2",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "swagger-express-middleware": "^1.1.1"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.24",
+    "@types/cookie-parser": "^1.4.1",
+    "@types/dotenv": "^4.0.3",
     "@types/express": "^4.16.0",
     "@types/http-errors": "^1.6.1",
-    "@types/node": "^10.11.3",
+    "@types/node": "^10.12.0",
+    "@types/pino": "^5.6.1",
     "@types/shelljs": "^0.8.0",
+    "@types/swagger-express-middleware": "^1.0.8",
     "complexity-report": "^1.4.1",
     "concurrently": "*",
     "eslint-plugin-typescript": "*",
@@ -49,15 +59,8 @@
     "nodemon": "*",
     "notes": "*",
     "shelljs": "^0.8.2",
-    "standard": "*",
     "ts-node": "^7.0.1",
-    "typescript": "^3.1.3",
-    "typescript-eslint-parser": "*"
-  },
-  "standard": {
-    "parser": "typescript-eslint-parser",
-    "plugins": [
-      "typescript"
-    ]
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.3"
   }
 }

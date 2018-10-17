@@ -1,12 +1,11 @@
 # Containerized Nodejs REST Scaffold
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Travis](https://travis-ci.org/bjvickers/containerized-nodejs-rest-scaffold.svg?branch=master)](https://travis-ci.org/bjvickers/containerized-nodejs-rest-scaffold)
 [![Greenkeeper badge](https://badges.greenkeeper.io/bjvickers/containerized-nodejs-rest-scaffold.svg)](https://greenkeeper.io/)
 
 ## Develop and Staging
 ### Run
 ```
-$ npm run start-wip   
+$ npm run start:dev  
 ```
 This will run the app whilst monitoring any changes to the Typescript files.
 Changes will be automatically transpiled and the application will automatically reload.
@@ -14,7 +13,7 @@ Changes will be automatically transpiled and the application will automatically 
 
 ### Debugging
 ```
-$ npm run start-wip-debugger   
+$ npm run start:dev:debugger   
 ```
 Note that this is configured for remote debugging (for local debugging,
 change the IP address from 0.0.0.0 to 127.0.0.1. 
@@ -22,13 +21,13 @@ change the IP address from 0.0.0.0 to 127.0.0.1.
 Debugging may be performed using Chromium Developer Tools:
 https://nodejs.org/en/docs/guides/debugging-getting-started
 
-As with `start-wip`, auto-compilation and reload will occur on any changes
+As with `start:dev`, auto-compilation and reload will occur on any changes
 made to the Typescript files.
 
 
 ### Profiling / Local Load Testing
 ```
-$ npm run start-wip-profiler   
+$ npm run start:dev:profiler   
 ```
 A tick file will be created and populated during app execution.
 To review the file, stop the app, then:

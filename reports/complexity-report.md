@@ -11,7 +11,7 @@
 
 ## /home/ben/project1/dist/bin/start.js
 
-* Physical LOC: 15
+* Physical LOC: 16
 * Logical LOC: 12
 * Mean parameter count: 1
 * Cyclomatic complexity: 4

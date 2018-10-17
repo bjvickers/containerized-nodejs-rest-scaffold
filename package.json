@@ -49,7 +49,6 @@
     "@types/swagger-express-middleware": "^1.0.8",
     "complexity-report": "^1.4.1",
     "concurrently": "*",
-    "eslint-plugin-typescript": "*",
     "express": "^4.16.4",
     "husky": "*",
     "loadtest": "*",

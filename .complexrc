@@ -11,5 +11,6 @@
   "switchcase": false,
   "forin": false,
   "trycatch": false,
-  "newmi": false
+  "newmi": false,
+  "maxcyc": 10
 }

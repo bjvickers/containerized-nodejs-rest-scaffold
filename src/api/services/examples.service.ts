@@ -1,6 +1,5 @@
 "use strict"
 
-import Promise from "bluebird"
 import L from "../../lib/logger"
 
 let id = 0

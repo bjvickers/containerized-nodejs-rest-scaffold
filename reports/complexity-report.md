@@ -5,9 +5,9 @@
 * Mean per-function cyclomatic complexity: 1.875
 * Mean per-function Halstead effort: 247.95164411899896
 * Mean per-module maintainability index: 142.03843664426847
-* First-order density: 0%
-* Change cost: 25%
-* Core size: 0%
+* First-order density: 12.5%
+* Change cost: 43.75%
+* Core size: 25%
 
 ## /home/ben/project1/dist/bin/start.js
 

@@ -12,5 +12,13 @@
   "forin": false,
   "trycatch": false,
   "newmi": false,
-  "maxcyc": 10
+  "maxcyc": 10,
+  "maxcycden": 100,
+  "maxhd": 20,
+  "maxhv": 500,
+  "maxhe": 2000,
+  "minmi": 100,
+  "maxfod": 20,
+  "maxcost": 50,
+  "maxsize": 25
 }

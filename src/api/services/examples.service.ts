@@ -3,6 +3,7 @@
 import L from "../../lib/logger"
 
 let id = 0
+
 interface IExample {
   id: number,
   name: string

@@ -1,7 +1,9 @@
 "use strict"
 
 import bodyParser from "body-parser"
+import cors from "cors"
 import express from "express"
+import helmet from "helmet"
 import http from "http"
 import os from "os"
 import l from "../lib/logger"
@@ -11,6 +13,11 @@ const app = express()
 
 export default class ExpressServer {
   constructor() {
+    app.use(helmet())
+
+    // Cors enabled by default for all domains. See npm package
+    // for details on how to limit domains.
+    app.use(cors())
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))
   }

@@ -2,11 +2,20 @@
   "name": "containerized-nodejs-rest-scaffold",
   "version": "0.0.0",
   "description": "A scaffold for building a containerized NodeJS REST service",
+  "author": "bjvickers",
+  "license":"MIT",
+  "homepage": "https://github.com/bjvickers/containerized-nodejs-rest-scaffold#README.md",
   "repository": {
     "type": "git",
     "url": "https://github.com/bjvickers/containerized-nodejs-rest-scaffold"
   },
-  "author": "bjvickers",
+  "bugs": {
+    "url": "https://github.com/bjvickers/containerized-nodejs-rest-scaffold/issues",
+    "email": ""
+  },
+  "engines": {
+    "node": ">=10.12.0"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "npm run inspect"

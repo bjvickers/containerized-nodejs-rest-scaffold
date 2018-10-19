@@ -1,6 +1,7 @@
 # Containerized Nodejs REST Scaffold
 [![Travis](https://travis-ci.org/bjvickers/containerized-nodejs-rest-scaffold.svg?branch=master)](https://travis-ci.org/bjvickers/containerized-nodejs-rest-scaffold)
 [![Greenkeeper badge](https://badges.greenkeeper.io/bjvickers/containerized-nodejs-rest-scaffold.svg)](https://greenkeeper.io/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbjvickers%2Fcontainerized-nodejs-rest-scaffold.svg?type=shield)]
 
 
 ## Install

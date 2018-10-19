@@ -1,6 +1,7 @@
 # Containerized Nodejs REST Scaffold
 [![Travis](https://travis-ci.org/bjvickers/containerized-nodejs-rest-scaffold.svg?branch=master)](https://travis-ci.org/bjvickers/containerized-nodejs-rest-scaffold)
 [![Greenkeeper badge](https://badges.greenkeeper.io/bjvickers/containerized-nodejs-rest-scaffold.svg)](https://greenkeeper.io/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbjvickers%2Fcontainerized-nodejs-rest-scaffold.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbjvickers%2Fcontainerized-nodejs-rest-scaffold?ref=badge_shield)
 
 
 ## Install
@@ -74,3 +75,7 @@ $ npm start
 
 The scaffold uses pm2 to ensure continuous operation in the event of shutdown, 
 and clustering, to maximise performance.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbjvickers%2Fcontainerized-nodejs-rest-scaffold.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbjvickers%2Fcontainerized-nodejs-rest-scaffold?ref=badge_large)

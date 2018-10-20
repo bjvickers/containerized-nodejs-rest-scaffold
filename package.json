@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A scaffold for building a containerized NodeJS REST service",
   "author": "bjvickers",
-  "license":"MIT",
+  "license": "MIT",
   "homepage": "https://github.com/bjvickers/containerized-nodejs-rest-scaffold#README.md",
   "repository": {
     "type": "git",
@@ -18,11 +18,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run inspect"
+      "pre-commit": "npm run build && npm run inspect"
     }
   },
   "scripts": {
-    "inspect": "npm run lint && npm run build && npm run analyse && npm test && npm run inspect:notes",
+    "inspect": "npm run lint && npm run analyse && npm test && npm run inspect:notes",
     "inspect:notes": "notes src/",
     "lint": "tslint --config tslint.json \"src/**/*.ts\"",
     "lint:fix": "tslint --fix --config tslint.json \"src/**/*.ts\"",

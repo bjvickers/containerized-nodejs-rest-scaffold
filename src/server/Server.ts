@@ -7,22 +7,25 @@ import helmet from "helmet"
 import http from "http"
 import os from "os"
 import l from "../lib/logger"
+import IApplicationRoutes from "./IApplicationRoutes"
+import IServer from "./IServer"
 import swaggerify from "./swagger"
 
 const app = express()
 
-export default class ExpressServer {
+export default class Server<T, K> implements IServer<express.Application, express.Router> {
   constructor() {
-    app.use(helmet())
-
+    // Apply baseline security.
     // Cors enabled by default for all domains. See npm package
     // for details on how to limit domains.
+    app.use(helmet())
     app.use(cors())
+
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))
   }
 
-  public router(routes: (app: express.Application) => void): ExpressServer {
+  public router(routes: IApplicationRoutes<express.Router>): IServer<express.Application, express.Router> {
     swaggerify(app, routes)
     return this
   }

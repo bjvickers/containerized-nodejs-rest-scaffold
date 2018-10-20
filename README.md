@@ -10,7 +10,7 @@ $ mkdir -vp your-project
 $ cd your-project  
 $ git clone https://github.com/bjvickers/containerized-nodejs-rest-scaffold.git .  
 $ npm install  
-$ npm run build  
+$ npm run build && npm run inspect   
 ```
 
 

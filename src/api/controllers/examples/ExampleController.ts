@@ -1,13 +1,19 @@
 "use strict"
 
 import { Request, Response } from "express"
+import { inject, injectable } from "inversify"
+import "reflect-metadata"
+import TYPES from "../../../bin/types"
 import IExampleService from "../../services/IExampleService"
 import IExampleController from "./IExampleController"
 
+@injectable()
 export default class ExampleController implements IExampleController {
   protected service: IExampleService
 
-  public constructor(service: IExampleService) {
+  public constructor(
+    @inject(TYPES.IExampleService) service: IExampleService
+  ) {
     this.service = service
   }
 

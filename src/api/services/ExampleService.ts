@@ -1,5 +1,7 @@
 "use strict"
 
+import { injectable } from "inversify"
+import "reflect-metadata"
 import L from "../../lib/logger"
 import IExample from "../../models/IExample"
 import IExampleService from "./IExampleService"
@@ -10,6 +12,7 @@ const examples: IExample[] = [
   { id: id++, name: "example 1" }
 ]
 
+@injectable()
 export default class ExampleService implements IExampleService {
   public all(): Promise<IExample[]> {
     L.info(examples, "fetch all examples")

@@ -4,31 +4,32 @@ import bodyParser from "body-parser"
 import express from "express"
 import helmet from "helmet"
 import http from "http"
+import { injectable } from "inversify"
 import os from "os"
+import "reflect-metadata"
 import l from "../lib/logger"
-import IApplicationRoutes from "./IApplicationRoutes"
-import IServer from "./IServer"
 import swaggerify from "./swagger"
 
 const app = express()
 
-export default class Server<T, K> implements IServer<express.Application, express.Router> {
+@injectable()
+export default class Server {
   constructor() {
     app.use(helmet())
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))
+    swaggerify(app)
   }
 
-  public router(routes: IApplicationRoutes<express.Router>): IServer<express.Application, express.Router> {
-    swaggerify(app, routes)
+  public addRoute(route: string, router: express.Router): Server {
+    app.use(route, router)
     return this
   }
 
-  public listen(port: number): express.Application {
+  public listen(port: number): void {
     const welcome = (portIn: number) => () => {
       l.info(`up and running in ${process.env.NODE_ENV || "development"} @: ${os.hostname()} on port: ${portIn}}`)
     }
     http.createServer(app).listen(port, welcome(port))
-    return app
   }
 }

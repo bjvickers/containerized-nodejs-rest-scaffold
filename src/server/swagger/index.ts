@@ -3,9 +3,8 @@
 import express from "express"
 import path from "path"
 import middleware from "swagger-express-middleware"
-import IApplicationRoutes from "../IApplicationRoutes"
 
-export default (app: express.Application, routes: IApplicationRoutes<express.Router>): void => {
+export default (app: express.Application): void => {
   middleware(path.join(__dirname, "Api.yaml"), app, (err: any, middlewareIn: middleware.SwaggerMiddleware): void => {
     // Enable Express' case-sensitive and strict options
     // (so "/entities", "/Entities", and "/Entities/" are all different)
@@ -37,7 +36,5 @@ export default (app: express.Application, routes: IApplicationRoutes<express.Rou
         "<pre>" + errIn.message + "</pre>"
       )
     })
-
-    routes.all().forEach((router: express.Router, key: string) => app.use(key, router))
   })
 }

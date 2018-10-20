@@ -9,6 +9,7 @@
     "strictPropertyInitialization": true,
     "module": "commonjs",
     "lib": ["es6"],
+    "types": ["reflect-metadata"],
     "target": "es6",
     "esModuleInterop": true,
     "moduleResolution": "node",
@@ -20,7 +21,9 @@
         "node_modules/*",
         "src/types/*"
       ]
-    }
+    },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": [
     "src/**/*"

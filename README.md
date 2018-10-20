@@ -10,7 +10,7 @@ $ mkdir -vp your-project
 $ cd your-project  
 $ git clone https://github.com/bjvickers/containerized-nodejs-rest-scaffold.git .  
 $ npm install  
-$ npm run build  
+$ npm run build && npm run inspect   
 ```
 
 
@@ -57,8 +57,15 @@ $ ./node_modules/loadtest/bin/loadtest.js -c 1 -n 10 http://localhost:3000/
 ```
 $ npm test   
 ```
-Includes a complexity test. For an understanding of the complexity metrics,
-please see [here](https://github.com/escomplex/escomplex/blob/master/METRICS.md).
+
+
+### Static Analysis
+```
+$ npm run analyse:complexity   
+$ npm run analyse:security   
+```
+For an understanding of the complexity metrics, please see 
+[here](https://github.com/escomplex/escomplex/blob/master/METRICS.md).
 
 
 ### Leaving Notes

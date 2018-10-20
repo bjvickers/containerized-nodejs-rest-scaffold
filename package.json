@@ -2,18 +2,27 @@
   "name": "containerized-nodejs-rest-scaffold",
   "version": "0.0.0",
   "description": "A scaffold for building a containerized NodeJS REST service",
+  "author": "bjvickers",
+  "license": "MIT",
+  "homepage": "https://github.com/bjvickers/containerized-nodejs-rest-scaffold#README.md",
   "repository": {
     "type": "git",
     "url": "https://github.com/bjvickers/containerized-nodejs-rest-scaffold"
   },
-  "author": "bjvickers",
+  "bugs": {
+    "url": "https://github.com/bjvickers/containerized-nodejs-rest-scaffold/issues",
+    "email": ""
+  },
+  "engines": {
+    "node": ">=10.12.0"
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run inspect"
+      "pre-commit": "npm run build && npm run inspect"
     }
   },
   "scripts": {
-    "inspect": "npm run lint && npm run build && npm run analyse && npm test && npm run inspect:notes",
+    "inspect": "npm run lint && npm run analyse && npm test && npm run inspect:notes",
     "inspect:notes": "notes src/",
     "lint": "tslint --config tslint.json \"src/**/*.ts\"",
     "lint:fix": "tslint --fix --config tslint.json \"src/**/*.ts\"",
@@ -34,7 +43,6 @@
   },
   "dependencies": {
     "app-root-path": "^2.1.0",
-    "cors": "^2.8.4",
     "dotenv": "^6.1.0",
     "helmet": "^3.14.0",
     "http-errors": "^1.7.1",
@@ -45,7 +53,6 @@
   "devDependencies": {
     "@types/app-root-path": "^1.2.4",
     "@types/bluebird": "^3.5.24",
-    "@types/cors": "^2.8.4",
     "@types/dotenv": "^4.0.3",
     "@types/express": "^4.16.0",
     "@types/helmet": "0.0.42",

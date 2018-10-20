@@ -1,20 +1,20 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
-  version: 1.0.0
-  title: project2
-  description: My cool TypeScript app
+  version: '0.0.1'
+  title: 'Containerized-NodeJS-REST-Scaffold'
+  description: 'REST API Scaffold'
 basePath: /api/v1
+consumes:
+  - application/json
+produces:
+  - application/json
+schemes:
+ - https
 tags:
   - name: Examples
     description: Simple example endpoints
   - name: Specification
     description: The swagger API specification
-
-consumes:
-  - application/json
-produces:
-  - application/json
-
 
 definitions:
   ExampleBody:
@@ -25,7 +25,7 @@ definitions:
     properties:
       name:
         type: string
-        example: no_stress
+        example: this-is-an-example
 
 paths:
   /examples:
@@ -50,7 +50,7 @@ paths:
       responses:
         200:
           description: Returns all examples
-
+  
   /examples/{id}:
     get:
       tags:
@@ -66,7 +66,7 @@ paths:
           description: Return the example with the specified id
         404:
           description: Example not found
-
+  
   /spec:
     get:
       tags:

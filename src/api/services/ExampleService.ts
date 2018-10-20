@@ -1,20 +1,16 @@
 "use strict"
 
 import L from "../../lib/logger"
+import IExample from "../../models/IExample"
+import IExampleService from "./IExampleService"
 
 let id = 0
-
-interface IExample {
-  id: number,
-  name: string
-}
-
 const examples: IExample[] = [
   { id: id++, name: "example 0" },
   { id: id++, name: "example 1" }
 ]
 
-export class ExamplesService {
+export default class ExampleService implements IExampleService {
   public all(): Promise<IExample[]> {
     L.info(examples, "fetch all examples")
     return Promise.resolve(examples)
@@ -35,5 +31,3 @@ export class ExamplesService {
     return Promise.resolve(example)
   }
 }
-
-export default new ExamplesService()

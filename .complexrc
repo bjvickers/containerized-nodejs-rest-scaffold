@@ -18,7 +18,5 @@
   "maxhv": 500,
   "maxhe": 2000,
   "minmi": 100,
-  "maxfod": 20,
-  "maxcost": 50,
-  "maxsize": 25
+  "maxcost": 50
 }

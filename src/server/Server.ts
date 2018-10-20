@@ -1,7 +1,6 @@
 "use strict"
 
 import bodyParser from "body-parser"
-import cors from "cors"
 import express from "express"
 import helmet from "helmet"
 import http from "http"
@@ -15,12 +14,7 @@ const app = express()
 
 export default class Server<T, K> implements IServer<express.Application, express.Router> {
   constructor() {
-    // Apply baseline security.
-    // Cors enabled by default for all domains. See npm package
-    // for details on how to limit domains.
     app.use(helmet())
-    app.use(cors())
-
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))
   }

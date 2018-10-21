@@ -1,6 +1,6 @@
 {
   "name": "containerized-nodejs-rest-scaffold",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A scaffold for building a containerized NodeJS REST service",
   "author": "bjvickers",
   "license": "MIT",
@@ -19,8 +19,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run validate:project",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && npm run validate:project"
     }
   },
   "scripts": {
@@ -35,7 +34,7 @@
     "inspect:security": "check-for-leaks .",
     "inspect:deadlibs": "depcheck . --ignore-dirs=dist,node_modules --ignores=\"@commitlint/*,@types/*,husky,nodemon,tslint-config-security\"",
     "fix:lint": "tslint --fix --config tslint.json \"src/**/*.ts\"",
-    "fix:version": "bump --prompt",
+    "fix:version": "bump --prompt --grep package-lock.json",
     "version": "git add .",
     "test": "npm run test:unit && npm run test:spec && npm run test:feature",
     "test:unit": "echo 'no unit tests yet' && exit 0",

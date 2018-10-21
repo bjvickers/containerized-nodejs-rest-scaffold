@@ -19,7 +19,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && npm run validate:project"
+      "pre-commit": "npm run validate:project",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "scripts": {

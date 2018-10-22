@@ -12,9 +12,9 @@ import swaggerify from "./swagger"
 
 const app = express()
 
-// # TODO: Use package 'http-errors' as required.
-// # TODO: Either inject all routes into constructor, or find a way to
-// # TODO: add routes AFTER the swaggerify() callback is executed.
+// @TODO: Use package 'http-errors' as required.
+// @TODO: Either inject all routes into constructor, or find a way to
+// @TODO: add routes AFTER the swaggerify() callback is executed.
 @injectable()
 export default class Server {
   constructor() {

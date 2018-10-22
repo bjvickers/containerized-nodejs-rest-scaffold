@@ -4,4 +4,4 @@ dist
 logs
 *.log
 *.swp
-reports/*
+reports/*.html

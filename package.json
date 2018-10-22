@@ -1,6 +1,6 @@
 {
   "name": "containerized-nodejs-rest-scaffold",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A scaffold for building a containerized NodeJS REST service",
   "author": "bjvickers",
   "license": "MIT",
@@ -10,8 +10,7 @@
     "url": "https://github.com/bjvickers/containerized-nodejs-rest-scaffold"
   },
   "bugs": {
-    "url": "https://github.com/bjvickers/containerized-nodejs-rest-scaffold/issues",
-    "email": "15998416+bjvickers@users.noreply.github.com"
+    "url": "https://github.com/bjvickers/containerized-nodejs-rest-scaffold/issues"
   },
   "engines": {
     "node": ">=10.0.0",
@@ -19,31 +18,30 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "npm run validate:project"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS || (node ./scripts/notice.commits.js && exit 1)",
+      "pre-push": "npm run inspect"
     }
   },
   "scripts": {
-    "setup": "npm run validate:node && npm run validate:project && npm run fix:version",
-    "validate:node": "check-engine",
-    "validate:project": "npm run build && npm run inspect && npm test",
+    "setup": "check-engine && npm run inspect && node ./scripts/notice.version.js",
+    "inspect": "npm run build && npm run check && npm test && npm run report",
     "build": "npm run build:transpile && npm run build:copy-static-assets",
     "build:transpile": "tsc",
     "build:copy-static-assets": "ts-node ./scripts/copy-static-assets.ts",
-    "inspect": "npm run inspect:lint && npm run inspect:security && npm run inspect:deadlibs",
-    "inspect:lint": "tslint --config tslint.json \"src/**/*.ts\"",
-    "inspect:security": "check-for-leaks .",
-    "inspect:deadlibs": "depcheck . --ignore-dirs=dist,node_modules --ignores=\"@commitlint/*,@types/*,husky,nodemon,tslint-config-security\"",
-    "fix:lint": "tslint --fix --config tslint.json \"src/**/*.ts\"",
-    "fix:version": "bump --prompt --grep package-lock.json",
-    "version": "git add .",
+    "check": "npm run check:secure-code-style && npm run check:secure-credentials && npm run check:deadlibs",
+    "check:secure-code-style": "tslint --config tslint.json \"src/**/*.ts\"",
+    "check:secure-credentials": "check-for-leaks .",
+    "check:deadlibs": "depcheck . --ignore-dirs=dist,node_modules --ignores=\"@commitlint/*,@types/*,husky,nodemon,tslint-config-security\"",
     "test": "npm run test:unit && npm run test:spec && npm run test:feature",
     "test:unit": "echo 'no unit tests yet' && exit 0",
     "test:spec": "echo 'no spec tests yet' && exit 0",
     "test:feature": "echo 'no feature tests yet' && exit 0",
-    "report": "npm run report:complexity && npm run report:notes",
-    "report:complexity": "exitzero cr ./dist/",
-    "report:notes": "notes src/",
+    "report": "npm run report:complexity && npm run report:reminders && node ./scripts/notice.reports.js",
+    "report:complexity": "exitzero cr ./dist/ | marked -s > ./reports/complexity.html",
+    "report:reminders": "exitzero leasot --reporter markdown src/**/*.ts | marked -s > ./reports/reminders.html",
+    "assist:fix-secure-code-style": "tslint --fix --config tslint.json \"src/**/*.ts\"",
+    "assist:bump-version": "bump --prompt --grep package-lock.json",
+    "version": "git add .",
     "start:basic": "concurrently --prefix \"[{name}]\" --kill-others --prefix-colors \"yellow.bold,cyan.bold\" \"npm:watch-ts\" \"nodemon ./dist/bin/start.js\"",
     "start:debug": "concurrently --prefix \"[{name}]\" --kill-others --prefix-colors \"yellow.bold,cyan.bold\" \"npm:watch-ts\" \"nodemon --inspect-brk=0.0.0.0:9229 ./dist/bin/start.js\"",
     "start:profile": "node --prof ./dist/bin/start.js",
@@ -72,6 +70,7 @@
     "@types/pino": "^5.6.1",
     "@types/shelljs": "^0.8.0",
     "@types/swagger-express-middleware": "^1.0.8",
+    "ascii-art": "^1.4.4",
     "check-engine": "^1.7.0",
     "check-for-leaks": "^1.2.0",
     "complexity-report": "^1.4.1",
@@ -80,8 +79,9 @@
     "exitzero": "^1.0.1",
     "express": "^4.16.4",
     "husky": "*",
+    "leasot": "^6.6.2",
+    "marked": "^0.5.1",
     "nodemon": "*",
-    "notes": "*",
     "shelljs": "^0.8.2",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",

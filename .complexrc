@@ -1,5 +1,4 @@
 {
-  "output": "./reports/complexity-report.md",
   "format": "markdown",
   "allfiles": false,
   "ignoreerrors": true,

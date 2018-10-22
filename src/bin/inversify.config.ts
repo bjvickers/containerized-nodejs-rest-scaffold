@@ -1,7 +1,7 @@
 "use strict"
 
-// # TODO: Implement InversifyJS modules here
-// # TODO: Move this and types.ts into ../di
+// @TODO: Implement InversifyJS modules here
+// @TODO: Move this and types.ts into ../di
 import express from "express"
 import { Container } from "inversify"
 import TYPES from "./types"

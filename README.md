@@ -60,15 +60,15 @@ $ npm test
 ### Static Reports
 ```
 $ npm run report:complexity   
-$ npm run report:notes   
+$ npm run report:reminders   
 ```
 For an understanding of the complexity metrics, please see 
 [here](https://github.com/escomplex/escomplex/blob/master/METRICS.md).
 
 
-### Making Notes
-Leave 'todo' and 'fixme' comments in a format that can be retrieved by
-`npm run report:notes`. Formatting guide is [here](https://www.npmjs.com/package/notes).
+### Leaving TODO and FIXME Reminders
+Leave 'TODO' and 'FIXME' comments in a format that can be retrieved by
+`npm run report:reminders. Formatting guide is [here](https://www.npmjs.com/package/leasot).
 
 
 

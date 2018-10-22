@@ -1,10 +1,4 @@
 "use strict"
 
-import pino from "pino"
-
-const log = pino({
-  level: process.env.LOG_LEVEL,
-  name: process.env.APP_ID
-})
-
+import log from "ts-log-class"
 export default log

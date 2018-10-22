@@ -7,7 +7,7 @@ import http from "http"
 import { injectable } from "inversify"
 import os from "os"
 import "reflect-metadata"
-import l from "../lib/logger"
+import log from "../lib/logger"
 import swaggerify from "./swagger"
 
 const app = express()
@@ -16,6 +16,7 @@ const app = express()
 // @TODO: Either inject all routes into constructor, or find a way to
 // @TODO: add routes AFTER the swaggerify() callback is executed.
 @injectable()
+@log()
 export default class Server {
   constructor() {
     app.use(helmet())
@@ -30,9 +31,6 @@ export default class Server {
   }
 
   public listen(port: number): void {
-    const welcome = (portIn: number) => () => {
-      l.info(`up and running in ${process.env.NODE_ENV || "development"} @: ${os.hostname()} on port: ${portIn}}`)
-    }
-    http.createServer(app).listen(port, welcome(port))
+    http.createServer(app).listen(port)
   }
 }

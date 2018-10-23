@@ -3,4 +3,4 @@ language: node_js
 node_js:
   - 10
 
-script: npm run build
+script: npm run build && npm run check && npm run test

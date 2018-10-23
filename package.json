@@ -1,6 +1,6 @@
 {
   "name": "containerized-nodejs-rest-scaffold",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "A scaffold for building a containerized NodeJS REST service",
   "author": "bjvickers",
   "license": "MIT",
@@ -38,7 +38,7 @@
     "test:feature": "echo 'no feature tests yet' && exit 0",
     "report": "npm run report:complexity && npm run report:reminders && node ./scripts/notice.reports.js",
     "report:complexity": "exitzero cr ./dist/ | marked -s > ./reports/complexity.html",
-    "report:reminders": "exitzero leasot --reporter markdown src/**/*.ts | marked -s > ./reports/reminders.html",
+    "report:reminders": "exitzero leasot --reporter markdown --ignore node_modules src/ | marked -s > ./reports/reminders.html",
     "assist:fix-secure-code-style": "tslint --fix --config tslint.json \"src/**/*.ts\"",
     "assist:bump-version": "bump --prompt --grep package-lock.json",
     "version": "git add .",

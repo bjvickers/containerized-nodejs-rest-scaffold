@@ -6,10 +6,10 @@ import log from "../../lib/logger"
 import IExample from "../../models/IExample"
 import IExampleService from "./IExampleService"
 
-let id = 0
+let counter = 0
 const examples: IExample[] = [
-  { id: id++, name: "example 0" },
-  { id: id++, name: "example 1" }
+  { id: counter++, name: "example 0" },
+  { id: counter++, name: "example 1" }
 ]
 
 @injectable()
@@ -19,13 +19,13 @@ export default class ExampleService implements IExampleService {
     return Promise.resolve(examples)
   }
 
-  public byId(idIn: number): Promise<IExample> {
-    return this.all().then((r) => r[idIn])
+  public byId(id: number): Promise<IExample> {
+    return this.all().then((r) => r[id])
   }
 
   public create(name: string): Promise<IExample> {
     const example: IExample = {
-      id: id++,
+      id: counter++,
       name
     }
     examples.push(example)

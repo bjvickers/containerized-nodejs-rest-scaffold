@@ -1,4 +1,5 @@
 "use strict"
 
-import log from "ts-log-class"
+import log, { IHookProperties } from "ts-log-class"
 export default log
+export { IHookProperties }

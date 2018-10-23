@@ -3,8 +3,8 @@
 import express from "express"
 import { inject, injectable } from "inversify"
 import "reflect-metadata"
-import log, { IHookProperties } from "../../../lib/logger"
 import TYPES from "../../../ioc/types"
+import log, { IHookProperties } from "../../../lib/logger"
 import IExampleService from "../../services/IExampleService"
 import IAllExamplesController from "./IAllExamplesController"
 
@@ -12,7 +12,7 @@ import IAllExamplesController from "./IAllExamplesController"
 // Reduces the size of the log message, which would otherwise include
 // the entire Request and Response objects.
 const logHook = (props: IHookProperties): string => {
-  props.arguments = { "Request": "Object", "Response": "Object" }
+  props.arguments = { Request: "Object", Response: "Object" }
   return JSON.stringify(props)
 }
 

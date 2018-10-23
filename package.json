@@ -1,6 +1,6 @@
 {
   "name": "containerized-nodejs-rest-scaffold",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A scaffold for building a containerized NodeJS REST service",
   "author": "bjvickers",
   "license": "MIT",
@@ -23,7 +23,7 @@
     }
   },
   "scripts": {
-    "setup": "check-engine && npm run inspect && node ./scripts/notice.version.js",
+    "setup": "check-engine && npm run inspect && npm run assist:bump-version",
     "inspect": "npm run build && npm run check && npm test && npm run report",
     "build": "npm run build:transpile && npm run build:copy-static-assets",
     "build:transpile": "tsc",
@@ -69,7 +69,6 @@
     "@types/node": "^10.12.0",
     "@types/shelljs": "^0.8.0",
     "@types/swagger-express-middleware": "^1.0.8",
-    "ascii-art": "^1.4.4",
     "check-engine": "^1.7.0",
     "check-for-leaks": "^1.2.0",
     "complexity-report": "^1.4.1",

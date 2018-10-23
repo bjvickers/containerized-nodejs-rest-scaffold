@@ -7,8 +7,8 @@
 
 ## Install
 ```
-$ mkdir -vp your-project  
-$ cd your-project  
+$ mkdir -vp scaffold  
+$ cd scaffold  
 $ git clone https://github.com/bjvickers/containerized-nodejs-rest-scaffold.git .  
 $ npm install  
 $ npm run setup  
@@ -59,16 +59,14 @@ $ npm test
 
 ### Static Reports
 ```
-$ npm run report:complexity   
-$ npm run report:reminders   
+$ npm run report   
 ```
-For an understanding of the complexity metrics, please see 
-[here](https://github.com/escomplex/escomplex/blob/master/METRICS.md).
+For an understanding of the complexity metrics, please see [here](https://github.com/escomplex/escomplex/blob/master/METRICS.md).
 
 
 ### Leaving TODO and FIXME Reminders
 Leave 'TODO' and 'FIXME' comments in a format that can be retrieved by
-`npm run report:reminders. Formatting guide is [here](https://www.npmjs.com/package/leasot).
+`npm run report:reminders`. Formatting guide is [here](https://www.npmjs.com/package/leasot).
 
 
 
@@ -79,7 +77,3 @@ $ npm start
 ```
 The scaffold uses pm2 to ensure continuous operation in the event of shutdown, 
 and clustering, to maximise performance.
-
-
-## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbjvickers%2Fcontainerized-nodejs-rest-scaffold.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbjvickers%2Fcontainerized-nodejs-rest-scaffold?ref=badge_large)

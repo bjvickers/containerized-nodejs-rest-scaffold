@@ -4,16 +4,9 @@
 import dotenv from "dotenv"
 dotenv.config()
 
-import IExampleController from "../api/controllers/examples/IExampleController"
-import IExampleRouterFactory from "../api/controllers/examples/IExampleRouterFactory"
-import Server from "../server/Server"
-import container from "./inversify.config"
-import TYPES from "./types"
+import container from "../ioc/ioc"
+import TYPES from "../ioc/types"
+import IServer from "../server/IServer"
 
-const server: Server = container.get<Server>(TYPES.Server)
-
-const exampleController: IExampleController = container.get<IExampleController>(TYPES.IExampleController)
-const exampleRouterFactory: IExampleRouterFactory = container.get<IExampleRouterFactory>(TYPES.IExampleRouterFactory)
-server.addRoute("/api/v1/examples", exampleRouterFactory.create(exampleController))
-
+const server: IServer = container.get<IServer>(TYPES.IServer)
 server.listen(parseInt(process.env.PORT || "3000", 10))

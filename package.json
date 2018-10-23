@@ -1,6 +1,6 @@
 {
   "name": "containerized-nodejs-rest-scaffold",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A scaffold for building a containerized NodeJS REST service",
   "author": "bjvickers",
   "license": "MIT",

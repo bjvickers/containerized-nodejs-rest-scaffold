@@ -3,8 +3,9 @@
 import express from "express"
 import path from "path"
 import middleware from "swagger-express-middleware"
+import IRouter from "../IRouter"
 
-export default (app: express.Application): void => {
+export default (app: express.Application, router: IRouter): void => {
   middleware(path.join(__dirname, "Api.yaml"), app, (err: any, middlewareIn: middleware.SwaggerMiddleware): void => {
     // Enable Express' case-sensitive and strict options
     // (so "/entities", "/Entities", and "/Entities/" are all different)
@@ -27,6 +28,9 @@ export default (app: express.Application): void => {
     app.use(
       middlewareIn.CORS(),
       middlewareIn.validateRequest())
+
+    // Application-specific routes
+    router.addRoutes(app)
 
     // Error handler to display the validation error as HTML
     app.use((errIn: any, req: express.Request, res: express.Response, next: express.NextFunction): void => {

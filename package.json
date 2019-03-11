@@ -58,7 +58,7 @@
     "reflect-metadata": "^0.1.12",
     "swagger-express-middleware": "^1.1.1",
     "ts-log-class": "^1.0.19",
-    "version-bump-prompt": "^4.2.1"
+    "version-bump-prompt": "^5.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",

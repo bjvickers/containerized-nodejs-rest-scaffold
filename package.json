@@ -50,7 +50,7 @@
     "start": "pm2 start ./dist/bin/start.js -i \"max\" -- --production"
   },
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.19.0",
     "dotenv": "^6.1.0",
     "helmet": "^3.14.0",
     "inversify": "^5.0.1",

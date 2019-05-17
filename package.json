@@ -77,7 +77,7 @@
     "depcheck": "^0.6.11",
     "execa": "^1.0.0",
     "exitzero": "^1.0.1",
-    "express": "^4.16.4",
+    "express": "^4.17.0",
     "husky": "*",
     "leasot": "^6.6.2",
     "listr": "^0.14.2",

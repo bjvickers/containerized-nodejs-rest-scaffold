@@ -79,7 +79,7 @@
     "exitzero": "^1.0.1",
     "express": "^4.16.4",
     "husky": "*",
-    "leasot": "^6.6.2",
+    "leasot": "^8.2.0",
     "listr": "^0.14.2",
     "marked": "^0.5.1",
     "nodemon": "*",

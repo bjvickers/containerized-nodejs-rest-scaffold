@@ -75,7 +75,7 @@
     "complexity-report": "^1.4.1",
     "concurrently": "*",
     "depcheck": "^0.6.11",
-    "execa": "^1.0.0",
+    "execa": "^2.0.5",
     "exitzero": "^1.0.1",
     "express": "^4.16.4",
     "husky": "*",

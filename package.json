@@ -74,7 +74,7 @@
     "check-for-leaks": "^1.2.0",
     "complexity-report": "^1.4.1",
     "concurrently": "*",
-    "depcheck": "^0.6.11",
+    "depcheck": "^0.9.1",
     "execa": "^1.0.0",
     "exitzero": "^1.0.1",
     "express": "^4.16.4",

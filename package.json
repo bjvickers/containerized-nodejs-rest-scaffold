@@ -81,7 +81,7 @@
     "husky": "*",
     "leasot": "^6.6.2",
     "listr": "^0.14.2",
-    "marked": "^0.5.1",
+    "marked": "^0.8.0",
     "nodemon": "*",
     "tslint": "^5.11.0",
     "tslint-config-security": "^1.12.0",

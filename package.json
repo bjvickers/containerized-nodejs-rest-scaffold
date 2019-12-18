@@ -73,7 +73,7 @@
     "check-engine": "^1.7.0",
     "check-for-leaks": "^1.2.0",
     "complexity-report": "^1.4.1",
-    "concurrently": "*",
+    "concurrently": ">=5.0.2",
     "depcheck": "^0.6.11",
     "execa": "^1.0.0",
     "exitzero": "^1.0.1",

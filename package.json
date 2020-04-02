@@ -69,7 +69,7 @@
     "@types/helmet": "0.0.42",
     "@types/node": "^10.12.0",
     "@types/swagger-express-middleware": "^1.0.8",
-    "chalk": "^2.4.1",
+    "chalk": "^4.0.0",
     "check-engine": "^1.7.0",
     "check-for-leaks": "^1.2.0",
     "complexity-report": "^1.4.1",

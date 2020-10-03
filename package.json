@@ -54,7 +54,7 @@
     "dotenv": "^6.1.0",
     "helmet": "^3.14.0",
     "inversify": "^5.0.1",
-    "pm2": "^3.2.2",
+    "pm2": "^4.3.0",
     "reflect-metadata": "^0.1.12",
     "swagger-express-middleware": "^1.1.1",
     "ts-log-class": "^1.0.19",
